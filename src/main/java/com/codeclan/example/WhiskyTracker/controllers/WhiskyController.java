@@ -19,7 +19,7 @@ public class WhiskyController {
 
     @GetMapping(value = "/bottled/{year}")
     public List<Whisky> findAllWhiskyYear(@PathVariable int year){
-        return whiskyRepository.OfYear(year);
+        return whiskyRepository.ofYear(year);
     }
 
 }
