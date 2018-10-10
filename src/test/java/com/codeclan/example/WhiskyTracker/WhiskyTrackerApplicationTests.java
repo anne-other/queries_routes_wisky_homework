@@ -31,13 +31,22 @@ public class WhiskyTrackerApplicationTests {
 		List<Whisky> whiskiesOfYear = whiskyRepository.ofYear(2018);
 	}
 
-//	@Test
-//	public void canGetWhiskyOfParticularRegion() {
-//		List<Whisky> whiskiesOfRegion = whiskyRepository.ofRegion("Highland");
-//	}
+	@Test
+	public void canGetWhiskyOfParticularRegion() {
+		List<Whisky> whiskiesOfRegion = whiskyRepository.ofRegion("Highland");
+	}
 
 	@Test
 	public void canGetDistilleryByRegion() {
 		List<Distillery> distilleriesByRegion = distilleryRepository.ofRegion("Speyside");
+	}
+
+	@Test
+	public void canGetWhiskyOfAgeFromDistillery() {
+		Distillery distillery1 = new Distillery("Glendronach", "Highland");
+		distilleryRepository.save(distillery1);
+		Whisky whisky4 = new Whisky("The Glendronach Original", 12, 2018, distillery1);
+		whiskyRepository.save(whisky4);
+		List<Whisky> whiskiesByAgeAndDestillery = whiskyRepository.distilleryAndAge(distillery1, 12);
 	}
 }
