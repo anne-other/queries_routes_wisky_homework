@@ -11,5 +11,5 @@ public interface WhiskyRepositoryCustom {
 
     List<Whisky> ofRegion(String region);
 
-    List<Whisky> distilleryAndAge(Distillery distillery, int age);
+    List<Whisky> distilleryAndAge(int distillery, int age);
 }

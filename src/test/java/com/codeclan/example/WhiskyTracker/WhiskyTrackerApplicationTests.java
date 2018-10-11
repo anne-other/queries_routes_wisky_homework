@@ -43,10 +43,10 @@ public class WhiskyTrackerApplicationTests {
 
 	@Test
 	public void canGetWhiskyOfAgeFromDistillery() {
-		Distillery distillery1 = new Distillery("Glendronach", "Highland");
-		distilleryRepository.save(distillery1);
-		Whisky whisky4 = new Whisky("The Glendronach Original", 12, 2018, distillery1);
-		whiskyRepository.save(whisky4);
-		List<Whisky> whiskiesByAgeAndDestillery = whiskyRepository.distilleryAndAge(distillery1, 12);
+//		Distillery distillery1 = new Distillery("Glendronach", "Highland");
+//		distilleryRepository.save(distillery1);
+//		Whisky whisky4 = new Whisky("The Glendronach Original", 12, 2018, distillery1);
+//		whiskyRepository.save(whisky4);
+		List<Whisky> whiskiesByAgeAndDestillery = whiskyRepository.distilleryAndAge(1, 12);
 	}
 }
